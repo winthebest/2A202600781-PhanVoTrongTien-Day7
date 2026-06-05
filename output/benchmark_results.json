@@ -1,0 +1,327 @@
+{
+  "created_at_utc": "2026-06-05T10:22:17.014662+00:00",
+  "baseline": [
+    {
+      "document": "VinWonders_Nha_Trang",
+      "strategy": "FixedSizeChunker",
+      "chunk_count": 35,
+      "avg_length": 195.1,
+      "preserves_context": "Trung bình"
+    },
+    {
+      "document": "VinWonders_Nha_Trang",
+      "strategy": "SentenceChunker",
+      "chunk_count": 15,
+      "avg_length": 408.4,
+      "preserves_context": "Cao — giữ ranh giới câu"
+    },
+    {
+      "document": "VinWonders_Nha_Trang",
+      "strategy": "RecursiveChunker",
+      "chunk_count": 47,
+      "avg_length": 129.3,
+      "preserves_context": "Trung bình–cao — tôn trọng đoạn/section"
+    },
+    {
+      "document": "Grand_World",
+      "strategy": "FixedSizeChunker",
+      "chunk_count": 57,
+      "avg_length": 198.8,
+      "preserves_context": "Trung bình"
+    },
+    {
+      "document": "Grand_World",
+      "strategy": "SentenceChunker",
+      "chunk_count": 20,
+      "avg_length": 509.3,
+      "preserves_context": "Cao — giữ ranh giới câu"
+    },
+    {
+      "document": "Grand_World",
+      "strategy": "RecursiveChunker",
+      "chunk_count": 80,
+      "avg_length": 126.2,
+      "preserves_context": "Trung bình–cao — tôn trọng đoạn/section"
+    },
+    {
+      "document": "Vinpearl_Safari_Phú_Quốc",
+      "strategy": "FixedSizeChunker",
+      "chunk_count": 26,
+      "avg_length": 196.7,
+      "preserves_context": "Trung bình"
+    },
+    {
+      "document": "Vinpearl_Safari_Phú_Quốc",
+      "strategy": "SentenceChunker",
+      "chunk_count": 10,
+      "avg_length": 458.4,
+      "preserves_context": "Cao — giữ ranh giới câu"
+    },
+    {
+      "document": "Vinpearl_Safari_Phú_Quốc",
+      "strategy": "RecursiveChunker",
+      "chunk_count": 38,
+      "avg_length": 119.7,
+      "preserves_context": "Trung bình–cao — tôn trọng đoạn/section"
+    }
+  ],
+  "section_strategy": [
+    {
+      "document": "VinWonders_Nha_Trang",
+      "strategy": "SectionChunker (của tôi)",
+      "chunk_count": 12,
+      "avg_length": 511.0,
+      "retrieval_quality": "Cao hơn baseline khi hỏi theo mục (giá, điều khoản, mô tả)"
+    },
+    {
+      "document": "Grand_World",
+      "strategy": "SectionChunker (của tôi)",
+      "chunk_count": 20,
+      "avg_length": 509.2,
+      "retrieval_quality": "Cao hơn baseline khi hỏi theo mục (giá, điều khoản, mô tả)"
+    },
+    {
+      "document": "Vinpearl_Safari_Phú_Quốc",
+      "strategy": "SectionChunker (của tôi)",
+      "chunk_count": 10,
+      "avg_length": 459.6,
+      "retrieval_quality": "Cao hơn baseline khi hỏi theo mục (giá, điều khoản, mô tả)"
+    }
+  ],
+  "retrieval": [
+    {
+      "query": "Giá vé hiện tại của VinWonders Nha Trang là bao nhiêu?",
+      "filter": null,
+      "agent_answer": "Context đã retrieve không chứa dòng giá rõ ràng cho sản phẩm được hỏi. Không thể xác nhận giá VinWonders Nha Trang từ chunk hiện tại.",
+      "top_hits": [
+        {
+          "score": 0.3131,
+          "title": "Aquafield Nha Trang - Spa & xông hơi chuẩn Hàn",
+          "section": "Tổng quan",
+          "preview": "Aquafield Nha Trang có tổng cộng 7 phòng trị liệu với 7 concept hoàn toàn riêng biệt, với nhiệt độ dao động từ 5 – 90 độ C, độ ẩm từ 10 – 70% đem đến đa dạng tr"
+        },
+        {
+          "score": 0.2741,
+          "title": "[Cần Thơ] 2N1Đ phòng Deluxe + Bữa sáng tại Vinpearl Hotel Cần Thơ",
+          "section": "Tổng quan",
+          "preview": "Vinpearl Hotel Cần Thơ tự hào là khách sạn 5 sao đầu tiên của mảnh đất duyên dáng Tây Đô. Khách sạn sở hữu vị trí đắc địa, nhìn ra 2 hướng thành phố Cần Thơ nhộ"
+        },
+        {
+          "score": 0.2257,
+          "title": "[HCM-Nha Trang] ROAM 2022: Combo 3N2Đ Vinpearl + VMB Vietnam Airlines khứ hồi + Ăn sáng hoặc ăn 3 bữa mỗi ngày",
+          "section": "Tổng quan",
+          "preview": "![image](https://booking-static.vinpearl.com/tours/e7720659cf0f4565aefd1601b503a597_ROAM22-NT2.jpg) ![image](https://booking-static.vinpearl.com/tours/381a31e8b"
+        }
+      ]
+    },
+    {
+      "query": "Aquafield Nha Trang có những phòng trị liệu xông hơi nào?",
+      "filter": null,
+      "agent_answer": "Context nhắc đến khu trị liệu nhưng chunk đã retrieve không liệt kê đủ tên 7 phòng xông hơi Aquafield.",
+      "top_hits": [
+        {
+          "score": 0.3301,
+          "title": "Aquafield Nha Trang - Spa & xông hơi chuẩn Hàn",
+          "section": "Tổng quan",
+          "preview": "Tận hưởng những giây phút thư giãn tại khu vực trị liệu. Quý khách có thể mua các vật dụng cá nhân cần thiết từ máy bán hàng tự động và thanh toán bằng vòng tay"
+        },
+        {
+          "score": 0.2355,
+          "title": "[HCM-Nha Trang] ROAM 2022: Combo 3N2Đ Vinpearl + VMB Vietnam Airlines khứ hồi + Ăn sáng hoặc ăn 3 bữa mỗi ngày",
+          "section": "Tổng quan",
+          "preview": "1. Các dịch vụ bao gồm: - Vé máy bay khứ hồi Hồ Chí Minh - Nha Trang hãng Vietnam Airlines bao gồm 23kg hành lý ký gửi, 12kg hành lý xách tay, thuế phí sân bay "
+        },
+        {
+          "score": 0.2352,
+          "title": "[HCM-Nha Trang] ROAM 2022: Combo 3N2Đ Vinpearl + VMB Vietnam Airlines khứ hồi + Ăn sáng hoặc ăn 3 bữa mỗi ngày",
+          "section": "Tổng quan",
+          "preview": "### Hình ảnh"
+        }
+      ]
+    },
+    {
+      "query": "Combo 2N1Đ Vinpearl Hotel Cần Thơ bao gồm những dịch vụ gì?",
+      "filter": {
+        "destination": "Cần Thơ",
+        "product_type": "hotel_combo"
+      },
+      "agent_answer": "Combo bao gồm: 01 đêm nghỉ dưỡng tại phòng Deluxe khách sạn Vinpearl Hotel Cần Thơ cho 02 người lớn và 02 trẻ dưới 4 tuổi.; 01 bữa ăn sáng cho 02 người lớn và 02 trẻ dưới 4 tuổi.; Miễn phụ thu cuối tuần; Thuế phí dịch vụ.",
+      "top_hits": [
+        {
+          "score": 0.211,
+          "title": "[Cần Thơ] 2N1Đ phòng Deluxe + Bữa sáng tại Vinpearl Hotel Cần Thơ",
+          "section": "Tổng quan",
+          "preview": "Vinpearl Hotel Cần Thơ tự hào là khách sạn 5 sao đầu tiên của mảnh đất duyên dáng Tây Đô. Khách sạn sở hữu vị trí đắc địa, nhìn ra 2 hướng thành phố Cần Thơ nhộ"
+        },
+        {
+          "score": 0.1473,
+          "title": "[Cần Thơ] 2N1Đ phòng Deluxe + Bữa sáng tại Vinpearl Hotel Cần Thơ",
+          "section": "Bao gồm",
+          "preview": "## Bao gồm  1. Các dịch vụ bao gồm - 01 đêm nghỉ dưỡng tại phòng Deluxe khách sạn Vinpearl Hotel Cần Thơ cho 02 người lớn và 02 trẻ dưới 4 tuổi. - 01 bữa ăn sán"
+        },
+        {
+          "score": 0.0845,
+          "title": "[Cần Thơ] 2N1Đ phòng Deluxe + Bữa sáng tại Vinpearl Hotel Cần Thơ",
+          "section": "Tổng quan",
+          "preview": "Ngoài ra, Delta Lobby Lounge cũng là nơi “đi trốn\" tuyệt vời cho những ai tìm kiếm không gian tĩnh lặng, thưởng thức bữa tiệc trà chiều theo kiểu quý tộc Anh. K"
+        }
+      ]
+    },
+    {
+      "query": "Voucher golf Sunrise áp dụng tee-time và ngày nào?",
+      "filter": {
+        "product_type": "golf_voucher"
+      },
+      "agent_answer": "Theo điều khoản voucher golf (Sunrise): Sunrise - Tee-time trước 8:00 - Áp dụng cho nhóm từ 02 khách - Chỉ áp dụng ngày trong tuần từ thứ 2 - thứ 6. - Thời gian mua voucher: Từ nay đến 31/10/2026 - Thời gian sử dụng: Từ nay đến 31/10/2026",
+      "top_hits": [
+        {
+          "score": 0.1024,
+          "title": "[Vinpearl Golf Phú Quốc] - Voucher Tee time giá siêu ưu đãi",
+          "section": "Điều khoản và Thời gian sử dụng",
+          "preview": "## Điều khoản và Thời gian sử dụng  LƯU Ý QUAN TRỌNG: Vé chỉ có hiệu lực sử dụng 1 lần tương ứng với 1 Tee time và không bao gồm đêm nghỉ. Chi tiết áp dụng như "
+        },
+        {
+          "score": 0.0595,
+          "title": "[Vinpearl Golf Phú Quốc] - Voucher Tee time giá siêu ưu đãi",
+          "section": "Tổng quan",
+          "preview": "- Việc đặt dịch vụ sẽ chưa được xác nhận hợp lệ khi Quý khách chưa nhận được thư Xác nhận từ Vinpearl Golf"
+        },
+        {
+          "score": 0.014,
+          "title": "[Vinpearl Golf Phú Quốc] - Voucher Tee time giá siêu ưu đãi",
+          "section": "Chính sách hoàn huỷ",
+          "preview": "## Chính sách hoàn huỷ  Vé không được hoàn, hủy hay quy đổi thành dịch vụ khác Trường hợp phát sinh vấn đề đổi ngày, đổi loại vé hoặc hoàn hủy do trường hợp bất"
+        }
+      ]
+    },
+    {
+      "query": "Night Safari tại Vinpearl Safari Phú Quốc là gì?",
+      "filter": {
+        "destination": "Phú Quốc"
+      },
+      "agent_answer": "Context đã retrieve không chứa mô tả Night Safari Vinpearl Safari Phú Quốc. Agent không thể trả lời đúng từ chunk hiện tại.",
+      "top_hits": [
+        {
+          "score": 0.2887,
+          "title": "VinWonders Phú Quốc",
+          "section": "Tổng quan",
+          "preview": "Hãy tưởng tượng bạn đang bước vào một thế giới nơi trí tưởng tượng gặp gỡ những cuộc phiêu lưu kỳ thú, nơi các nền văn minh cổ đại sống lại, và những kỳ quan dư"
+        },
+        {
+          "score": 0.2014,
+          "title": "[Vinpearl Golf Phú Quốc] - Voucher Tee time giá siêu ưu đãi",
+          "section": "Thông tin chung",
+          "preview": "## Thông tin chung  TUYỆT TÁC SÂN GOLF GIỮA RỪNG NGUYÊN SINH Ẩn mình dưới những tán rừng nguyên sinh xanh ngút ngàn nơi Bắc đảo Phú Quốc, Vinpearl Golf Phú Quốc"
+        },
+        {
+          "score": 0.1589,
+          "title": "[Grand World Phú Quốc] Vé Bảo Tàng Gấu Teddy Bear",
+          "section": "Hướng dẫn sử dụng",
+          "preview": "## Hướng dẫn sử dụng  Khách hàng có thể xuất trình voucher in sẵn hoặc voucher điện tử này tại cổng để vào cửa  Voucher chỉ có hiệu lực 01 lần trong thời gian s"
+        }
+      ]
+    }
+  ],
+  "inventory": [
+    {
+      "doc_id": "[Cần_Thơ]_2N1Đ_phòng_Deluxe_+_Bữa_sáng_tại_Vinpearl_Hotel_Cần_Thơ",
+      "title": "[Cần Thơ] 2N1Đ phòng Deluxe + Bữa sáng tại Vinpearl Hotel Cần Thơ",
+      "chars": 4937,
+      "metadata": {
+        "product_type": "hotel_combo",
+        "destination": "Cần Thơ",
+        "current_price": "1.848.000 đ"
+      }
+    },
+    {
+      "doc_id": "[Grand_World_Phú_Quốc]_Vé_Bảo_Tàng_Gấu_Teddy_Bear",
+      "title": "[Grand World Phú Quốc] Vé Bảo Tàng Gấu Teddy Bear",
+      "chars": 3178,
+      "metadata": {
+        "product_type": "attraction",
+        "destination": "Phú Quốc",
+        "current_price": "200.000 đ"
+      }
+    },
+    {
+      "doc_id": "[HCM-Nha_Trang]_ROAM_2022_Combo_3N2Đ_Vinpearl_+_VMB_Vietnam_Airlines_khứ_hồi_+_Ăn_sáng_hoặc_ăn_3_bữa_mỗi_ngày",
+      "title": "[HCM-Nha Trang] ROAM 2022: Combo 3N2Đ Vinpearl + VMB Vietnam Airlines khứ hồi + Ăn sáng hoặc ăn 3 bữa mỗi ngày",
+      "chars": 11549,
+      "metadata": {
+        "product_type": "hotel_combo",
+        "destination": "Nha Trang",
+        "current_price": "1.795.000 đ"
+      }
+    },
+    {
+      "doc_id": "[Vinpearl_Golf_Phú_Quốc]_-_Voucher_Tee_time_giá_siêu_ưu_đãi",
+      "title": "[Vinpearl Golf Phú Quốc] - Voucher Tee time giá siêu ưu đãi",
+      "chars": 2794,
+      "metadata": {
+        "product_type": "golf_voucher",
+        "destination": "Phú Quốc",
+        "current_price": "1.700.000 đ"
+      }
+    },
+    {
+      "doc_id": "Aquafield_Nha_Trang_-_Spa_&_xông_hơi_chuẩn_Hàn",
+      "title": "Aquafield Nha Trang - Spa & xông hơi chuẩn Hàn",
+      "chars": 7007,
+      "metadata": {
+        "product_type": "hotel_combo",
+        "destination": "Nha Trang",
+        "current_price": "350.000 đ"
+      }
+    },
+    {
+      "doc_id": "Aquafield_Ocean_City_Hà_Nội_-_Tổ_hợp_Spa_Xông_hơi_cao_cấp_nhất_Việt_Nam",
+      "title": "Aquafield Ocean City Hà Nội - Tổ hợp Spa Xông hơi cao cấp nhất Việt Nam",
+      "chars": 4688,
+      "metadata": {
+        "product_type": "spa",
+        "destination": "Hà Nội",
+        "current_price": "600.000 đ"
+      }
+    },
+    {
+      "doc_id": "Grand_World",
+      "title": "Grand World",
+      "chars": 10212,
+      "metadata": {
+        "product_type": "entertainment",
+        "destination": "Hà Nội",
+        "current_price": "200.000 đ"
+      }
+    },
+    {
+      "doc_id": "Vinpearl_Safari_Phú_Quốc",
+      "title": "Vinpearl Safari Phú Quốc",
+      "chars": 4615,
+      "metadata": {
+        "product_type": "attraction",
+        "destination": "Phú Quốc",
+        "current_price": "850.000 đ"
+      }
+    },
+    {
+      "doc_id": "VinWonders_Nha_Trang",
+      "title": "VinWonders Nha Trang",
+      "chars": 6150,
+      "metadata": {
+        "product_type": "spa",
+        "destination": "Nha Trang",
+        "current_price": "500.000 đ"
+      }
+    },
+    {
+      "doc_id": "VinWonders_Phú_Quốc",
+      "title": "VinWonders Phú Quốc",
+      "chars": 6965,
+      "metadata": {
+        "product_type": "attraction",
+        "destination": "Phú Quốc",
+        "current_price": "950.000 đ"
+      }
+    }
+  ]
+}
