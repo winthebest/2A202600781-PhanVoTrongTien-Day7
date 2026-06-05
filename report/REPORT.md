@@ -135,10 +135,12 @@ class SectionChunker:
 | Phan Võ Trọng Tiển | SectionChunker + metadata filter | 8 | Khớp cấu trúc trang sản phẩm, filter theo `destination`/`product_type` | Section quá dài vẫn cần sub-chunk |
 | Võ Tấn Trung | Sliding Window 1000/100 | 8/10 | Giữ được nhiều ngữ cảnh trong mỗi chunk, phù hợp với câu hỏi về giá, điều khoản, chính sách hoàn huỷ và hướng dẫn sử dụng | Chunk dài nên đôi khi kéo theo thông tin phụ không cần thiết |
 | Đào Văn Tuân | ParentChildChunker (parent=800, child=200) | 8/10 (Hit@3: 4/5) | Child ngắn (200 ký tự) → vector chính xác; parent giữ đủ context cho LLM; khớp cấu trúc 2 lớp tự nhiên của data Vinpearl (`##` section → bullet) | Chunk count tăng gấp đôi so với baseline (62–81 chunks); Q1 thất bại do all-MiniLM-L6-v2 (tiếng Anh) embed "giá vé" không đủ mạnh |
- Nguyễn Bá Thành |Semantic Chunker | 10/10 (Hit@3: 100%) | Coherence cao nhất (0.782), các câu được gom theo ngữ nghĩa đồng nhất, tránh cắt đứt ngữ cảnh. | Tốc độ xử lý chậm hơn (11.86s) vì phải tính embedding cho từng câu đơn lẻ. |
+| Nguyễn Bá Thành | Semantic Chunker | 10/10 (Hit@3: 100%) | Coherence cao nhất (0.782), các câu được gom theo ngữ nghĩa đồng nhất, tránh cắt đứt ngữ cảnh | Tốc độ xử lý chậm hơn (11.86s) vì phải tính embedding cho từng câu đơn lẻ |
 
 **Strategy nào tốt nhất cho domain này? Tại sao?**
-> Với domain Vinpearl, **SectionChunker + metadata filter** phù hợp nhất vì tài liệu có section chuẩn và câu hỏi thường theo mục (giá, điều khoản, combo bao gồm). SentenceChunker là baseline tốt thứ hai; FixedSizeChunker kém hơn khi mô tả sản phẩm dài vì dễ cắt giữa thông tin quan trọng.
+> Theo kết quả so sánh nhóm, **Semantic Chunker** (Nguyễn Bá Thành) là strategy tốt nhất cho domain Vinpearl về **độ chính xác retrieval** (**10/10**, Hit@3 **5/5**): nó gom các câu có ngữ nghĩa gần nhau thành một chunk thống nhất, nên tránh được lỗi cắt giữa đoạn mô tả dài hoặc danh sách bullet — đúng kiểu câu hỏi benchmark của nhóm (giá, điều khoản, dịch vụ bao gồm, Night Safari). Điểm đổi lại là **chi phí xử lý cao hơn** (~11.86s) vì phải embed từng câu lúc chunking.
+>
+> Nếu cần **cân bằng tốc độ và chất lượng**, **ParentChildChunker** (Đào Văn Tuân, 8/10, Hit@3 **4/5**) là lựa chọn thực tế nhất: child ngắn (~200 ký tự) giúp vector search sắc nét, parent (~800) giữ đủ ngữ cảnh cho LLM — khớp cấu trúc 2 lớp tự nhiên của data Vinpearl (section `##` → bullet). **SectionChunker + metadata filter** (của mình) và **Sliding Window 1000/100** (Võ Tấn Trung) cùng đạt **8/10**, hữu ích khi câu hỏi trùng header section hoặc cần giữ khối context lớn, nhưng dễ kéo theo thông tin phụ hoặc vẫn phải sub-chunk khi section quá dài. **FixedSizeChunker** và **SentenceChunker** chỉ nên dùng làm baseline: FixedSize dễ cắt giữa thông tin quan trọng; Sentence giữ được ranh giới câu nhưng vẫn có thể trộn nhiều mục khác nhau trong cùng một chunk.
 
 ---
 
